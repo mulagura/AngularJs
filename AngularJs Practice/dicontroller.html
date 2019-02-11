@@ -1,0 +1,41 @@
+<html>
+  
+  <head>
+
+  		<script src="angular.js"></script>
+
+<script type="text/javascript">
+
+     	var app = angular.module("myApp",[]);
+
+     	app.controller("firstController", ["$rootScope","$scope", function(r,s)
+     	{
+     		r.root = "I am rootScope";
+     		s.controller1scope = "I am scope of the Controller";
+     	}]);
+
+
+     	</script>
+
+
+  </head>
+
+     <body ng-app="myApp">
+
+     	
+
+     	<div ng-controller="firstController">
+     		<p style="color:red;"> {{root}}
+     		</p>
+</br>
+     		<p style="color:red;"> {{controller1scope}}
+     		</p>
+     		</br>
+
+     	</div>
+
+
+     </body>	
+
+
+</html>

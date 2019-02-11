@@ -1,0 +1,41 @@
+<html>
+ 
+  <head>
+  <title> Angular ng-init example 2 </title>
+  <script src="angular.js"> </script>   
+
+  	<body>
+
+  		<div ng-app ng-init="employee={empid:10,empname:'ram'}" >
+
+  			<b> x valuse is {{employee.empid}} </b>
+  		</br>
+  			<b> y value is {{employee.empname}} </b>
+
+      </br>
+
+       <!--  expressions can also be used inside attributes -->
+
+        <input type="text" value="{{employee.empname}}">
+
+</br>
+
+   <!-- cannot access below statements because its a part of employee  -->
+
+        <b> x valuse is {{empid}} </b>
+      </br>
+        <b> y value is {{empname}} </b>
+
+
+
+  		</div>		
+
+
+  	</body>
+
+
+
+  </head>
+
+
+</html>

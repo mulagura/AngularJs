@@ -1,0 +1,71 @@
+<html>
+
+  <head>
+
+  	<title> Angular js service example div sion and multipliction of two numbers </title>
+
+  	<script src="angular.js"></script>
+
+  	<script type="text/javascript">
+
+  		var app = angular.module("myservicemodule",[]);
+
+  		app.service("myservice",function()
+  		{
+  			this.multipliction = function(a,b)
+  			{
+  				var c = a*b;
+  				return c;
+
+  			};
+
+  			this.division = function(a,b)
+  			{
+  				var c = a/b;
+  				return c;
+
+  			};
+
+  		});
+
+  		app.controller("myctrlr",["myservice","$scope",function(myservice,$scope)
+  		{
+
+  			$scope.first = "";
+  			$scope.second = "";
+  			$scope.result  = "";
+
+  			$scope.multipliction = function()
+  			{
+
+  				$scope.result = myservice.multipliction($scope.first,$scope.second);
+  			};
+  			$scope.division = function()
+  			{
+  				$scope.result = myservice.division($scope.first,$scope.second);
+  			};
+
+
+  		}]);
+
+
+  	</script>
+
+  </head>
+
+  <body ng-app="myservicemodule" ng-controller="myctrlr">
+
+  	<input type"text" ng-model="first">
+
+  	<input type"text" ng-model="second">
+
+  	<input type="button" ng-click="multiplication()">
+
+  	<input type="text" ng-model="result" >
+
+
+  	<!-- <b>{{result}}</b> -->
+
+  </body>	
+
+</html>

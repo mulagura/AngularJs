@@ -1,0 +1,83 @@
+<html>
+
+		<head>
+
+		  <title>  Angular Js MVC   </title>
+
+		  <script src="angular.js"> </script>
+
+		  <script type="text/javascript">
+
+		  var app = angular.module("modulename",[]);
+
+		  app.controller("ctrlr", function($scope,$rootScope)
+
+		  {
+
+		  	$rootScope.school = {"schoolname":"vit"};
+
+		  	$scope.teacher = {"teacherid":101,"teachername":"ram"};
+		  	$scope.student = {"studendid":152,"studentmarks":520};
+
+
+		  }); 
+
+
+
+		  app.controller("ctrlr2", function($scope,$rootScope)
+
+		  {
+
+		  	$rootScope.school1 = {"schoolname":"iit"};
+
+		  	$scope.teacher = {"teacherid":102,"teachername":"lakshman"};
+		  	$scope.student = {"studendid":153,"studentmarks":510};
+
+
+		  }); 
+
+
+
+		   </script>
+
+
+		</head>
+
+		    <body ng-app="modulename" >
+
+		    	<div  ng-controller="ctrlr">
+
+		    		{{school.schoolname}}
+
+		    		{{school1.schoolname}}
+
+		    		{{teacher.teacherid}}
+
+		    		<b ng-bind="teacher.teachername">
+		    		</b>
+
+		    		<input type="text" ng-model="student.studentmarks">
+
+
+		    	</div>
+
+
+		    	<div  ng-controller="ctrlr2">
+
+		    		{{school1.schoolname}}
+
+		    		{{teacher.teacherid}}
+
+		    		<b ng-bind="teacher.teachername">
+		    		</b>
+
+		    		<input type="text" ng-model="student.studentmarks">
+
+
+		    	</div>
+
+
+		    </body>
+
+
+</html>

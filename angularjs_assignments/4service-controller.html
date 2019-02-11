@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Service and Controller </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </head>
+
+  <body>
+
+    <div ng-app="myCustomApp" ng-controller="myCustomCtrlr">
+
+          <p> service and controller </p>
+          <h3> Url of this site is : {{url}} </h3>
+
+
+    </div>
+
+    <script>
+              var app = angular.module('myCustomApp', []);
+              app.controller("myCustomCtrlr",function($scope,$location)
+                {
+                  $scope.url = $location.absUrl();
+                });
+
+
+      </script>
+  </body>
+
+</html>

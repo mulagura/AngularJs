@@ -1,0 +1,43 @@
+<html>
+  
+  <head>
+
+  		<script src="angular.js"></script>
+
+<script type="text/javascript">
+
+     	var app = angular.module("myApp",[]);
+
+     	app.controller("firstController", ["$http","$scope", function(h,s)
+     	{
+     		h.get("https://www.w3schools.com/angular/welcome.htm").success(function (response)
+            {
+                alert(JSON.stringify(response));
+            });
+     		s.controller1scope = "I am scope of the Controller";
+     	}]);
+
+
+     	</script>
+
+
+  </head>
+
+     <body ng-app="myApp">
+
+     	
+
+     	<div ng-controller="firstController">
+     		<!-- p>{{get}}</p> -->
+</br>
+     		<p style="color:red;"> {{controller1scope}}
+     		</p>
+     		</br>
+
+     	</div>
+
+
+     </body>	
+
+
+</html>

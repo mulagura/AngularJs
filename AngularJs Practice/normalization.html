@@ -1,0 +1,39 @@
+<html>
+
+<head>
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript">
+angular.module('docsBindExample', [])
+.controller('Controller', ['$scope', function($scope) {
+  $scope.name = 'Ram Mulagura';
+}]);
+</script>
+</head>
+
+<body ng-app="docsBindExample">
+
+	<div ng-controller="Controller">
+
+
+  Hello <input ng-model='name'> <hr/>
+
+  Hello <input ng_model='name'> <hr/>
+
+  Hello <input ng:model='name'> <hr/>
+
+  Hello <input data-ng-model='name'> <hr/>
+
+  Hello <input x-ng-model='name'> <hr/>
+
+  Hello <input ng-model='names'> <hr/>
+
+  <span ng-bind="name"></span> <br/>
+  <span ng:bind="name"></span> <br/>
+  <span ng_bind="name"></span> <br/>
+  <span data-ng-bind="name"></span> <br/>
+  <span x-ng-bind="name"></span> <br/>
+</div>
+
+</body>
+
+</html>

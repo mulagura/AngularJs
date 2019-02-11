@@ -1,0 +1,49 @@
+<html>
+ 
+  <head>
+  <title> Angular ng-model example 2 two wat data binding </title>
+  <script src="angular.js"> </script>   
+
+  	<body>
+
+  		<div ng-app="myApp" ng-controller="myCtrl">
+
+
+        <p ng-bind="empname"> </p>
+
+    </br>
+  <!-- or --> 
+        {{empname}}
+
+</br>
+
+
+
+
+  		</div>	
+
+  		<SCRIPT TYPE="text/javascript">
+       
+
+      var employee =  angular.module("myApp", []);
+
+      employee.controller("myCtrl", function($scope)
+      {
+      	$scope.empname = "ram";
+      });
+
+
+
+
+
+  		</SCRIPT>	
+
+
+  	</body>
+
+
+
+  </head>
+
+
+</html>

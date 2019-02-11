@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> one service in another service </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </head>
+
+  <body>
+
+    <div ng-app="myCustomServiceApp" ng-controller="myServiceCtrl">
+
+          <h3> Hey using one service in another service using as array injection </h3>
+
+          <p> Enter first number to sum : <input type="number" ng-model="number1"/> </p>
+          <p> Enter second number to sum : <input type="number" ng-model="number2"/> </p>
+          <button ng-click = "sum()"> Sum </button>
+          <p> Result is: {{result}}</p>
+
+    </div>
+
+    <script>
+              var app = angular.module('myCustomServiceApp', []);
+              app.service("firstService",function()
+                {
+                  var sum = {};
+                  sum.addition = function(a,b)
+                  {
+                    return a + b;
+                  }
+                  return sum;
+                });
+
+                app.service("secondService",["firstService",function(firstService)
+                  {
+                   this.add = function(a,b)
+                   {
+                     return firstService.addition(a,b);
+                   }
+                  }]);
+
+                  app.controller('myServiceCtrl', function($scope, secondService) {
+                        $scope.sum = function() {
+                        $scope.result = secondService.add($scope.number1,$scope.number2);
+                              }
+                           });
+
+
+      </script>
+  </body>
+
+</html>

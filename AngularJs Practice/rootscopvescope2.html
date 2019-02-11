@@ -1,0 +1,62 @@
+<html>
+  
+  <head>
+
+  		<script src="angular.js"></script>
+
+<script type="text/javascript">
+
+     	var app = angular.module("myApp",[]);
+
+     	app.controller("firstController", function($rootScope,$scope)
+     	{
+     		$rootScope.root = "I am rootScope";
+     		$scope.controller1scope = "I am scope of first Controller";
+     	});
+
+     	app.controller("secondController", function($scope)
+     	{
+  			
+     		$scope.controller2scope = "I am scope of second Controller";
+     	});
+
+     	</script>
+
+
+  </head>
+
+     <body ng-app="myApp">
+
+     	
+
+     	<div ng-controller="firstController">
+     		<p style="color:red;"> {{root}}
+     		</p>
+</br>
+     		<p style="color:red;"> {{controller1scope}}
+     		</p>
+     		</br>
+     		<p style="color:red;" ng-show="controller2scope == undefined"> Cant show second controller since undefined {{controller2scope}}
+     		</p>
+
+
+     	</div>
+
+
+     	<div ng-controller="secondController">
+     		<p style="color:blue;"> {{root}}
+     		</p>
+</br>
+     		<p style="color:blue;"> {{controller2scope}}
+     		</p>
+     		</br>
+     		<p style="color:blue;" ng-show="controller1scope == undefined"> Cant show second controller since undefined  {{controller1scope}}
+     		</p>
+
+
+     	</div>
+
+     </body>	
+
+
+</html>

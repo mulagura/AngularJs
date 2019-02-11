@@ -1,0 +1,53 @@
+<html>
+
+		<head>
+
+		  <title>  Angular Js MVC   </title>
+
+		  <script src="angular.js"> </script>
+
+		  <script src="di.js">
+
+		 
+
+		   </script>
+
+
+		</head>
+
+		    <body ng-app="modulename" >
+
+		    	<div  ng-controller="ctrlr">
+
+		    		{{school.schoolname}}
+
+		    		{{teacher.teacherid}}
+
+		    		<b ng-bind="teacher.teachername">
+		    		</b>
+
+		    		<input type="text" ng-model="student.studentmarks">
+
+
+		    	</div>
+
+
+		    	<div  ng-controller="ctrlr2">
+
+		    		{{school.schoolname}}
+
+		    		{{teacher1.teacherid}}
+
+		    		<b ng-bind="teacher1.teachername">
+		    		</b>
+
+		    		<input type="text" ng-model="student1.studentmarks">
+
+
+		    	</div>
+
+
+		    </body>
+
+
+</html>

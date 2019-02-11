@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Filter Toggle </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </head>
+
+  <body>
+
+    <div ng-app="myFilterToggleApp" ng-controller="myFilterToggleCtrlr">
+
+          <p> Toggle Filter | cilck to toggle ascending and descending order </p>
+          <button ng-click="ascend = !ascend">Toggle</button>
+          <ul>
+            <li ng-show="ascend" ng-repeat="c in cities | orderBy:'name'">{{c.name}}</li>
+            <li ng-show="!ascend" ng-repeat="c in cities | orderBy:'-name'">{{c.name}}</li>
+          </ul>
+
+    </div>
+
+    <script>
+              var app = angular.module('myFilterToggleApp', []);
+              app.controller("myFilterToggleCtrlr",function($scope)
+                {
+                  $scope.cities = [{name:'Bangalore'},{name:'Ahmedabad'},{name:'Delhi'},
+                                   {name:'Tirupati'},{name:'Zica'},{name:'Mysore'},{name:'Panjim'}];
+                });
+
+      </script>
+  </body>
+
+</html>

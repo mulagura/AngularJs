@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Ng click button count </title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <body>
+
+    <div ng-app="myApps" ng-controller="feedbackController">
+
+      <form  ng-submit="submits()">
+        <input type="text" ng-model="feedback">
+        <input type="submit">
+        <textarea rows="4" cols="50">
+          {{feedback1}}
+          </textarea>
+</form>
+
+
+    </div>
+
+    <script>
+        var app = angular.module('myApps',[]);
+        app.controller('feedbackController',function($scope)
+      {
+          $scope.feedback1="";
+
+        $scope.submits = function()
+        {
+          $scope.feedback1= $scope.feedback;
+            $scope.feedback = "";
+        }
+      });
+    </script>
+
+  </body>
+</html>

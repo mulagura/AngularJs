@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Filter array of cities Select:Bangalore </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </head>
+
+  <body>
+    <div ng-app="myFilterApp" ng-controller="filterCtrl">
+
+          <p> Filter array of objects whose city is Bangalore :</p>
+          <ul>
+            <li ng-repeat="c in cities | filter:'Bangalore'">
+              {{ c.city + ', ' + c.code }}
+            </li>
+          </ul>
+
+    </div>
+
+      <script>
+              angular.module('myFilterApp', []).controller('filterCtrl', function($scope) {
+                  $scope.cities = [
+                    {city:'Ahmedabad',code:'AH'},{city:'Bangalore',code:'BLR'},{city:'Chennai',code:'CH'},{city:'Delhi',code:'DL'},
+                    {city:'Erode',code:'ER'},{city:'Faridabad',code:'FR'},{city:'GandhiNagar',code:'GH'},{city:'Tirupati',code:'TPTY'}
+                      ];
+                });
+      </script>
+  </body>
+
+</html>

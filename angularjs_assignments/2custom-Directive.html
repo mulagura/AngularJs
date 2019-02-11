@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Custom Directive </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </head>
+
+  <body>
+
+    <div ng-app="myCustomDirectiveApp">
+
+          <p> Gonna use custom Directive </p>
+          <my-custom-directive> </my-custom-directive>
+
+    </div>
+
+    <script>
+              var app = angular.module('myCustomDirectiveApp', []);
+              app.directive("myCustomDirective",function()
+                {
+                  return{
+                    template:"<h3> I am Custom Directive </h3>"
+                  };
+                });
+
+      </script>
+  </body>
+
+</html>

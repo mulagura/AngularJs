@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+<body ng-app="myApp">
+
+<p><a href="#!red">Red</a></p>
+
+<a href="#!green">Green</a>
+<a href="#!orange">orange</a>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+
+    .when("/red", {
+        templateUrl : "red.html"
+    })
+    .when("/green", {
+        templateUrl : "green.html"
+    })
+    .when("/orange", {
+        templateUrl : "orange.html"
+    });
+});
+</script>
+
+</body>
+</html>
